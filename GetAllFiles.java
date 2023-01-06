@@ -13,16 +13,39 @@ public class GetAllFiles {
     public static File placeholder1, placeholder2;
 
     public static void main( String[] args ) 
-    {   
+    {  
+        new GUI(); 
+    }
 
-        //new GUI(); 
+    public static void getFilesInDir( File dir ) {
+        try {
 
-        // UNCOMMENT THIS ALL OUT WHEN DONE WITH GUI
+            File here = new File( dir.getAbsolutePath() );
+            File[] contents = here.listFiles();
 
-         
-        
+            for( File f : contents ) {
+                if(f.isFile() && !f.isHidden() && f.getName().indexOf(".mcmeta") == -1) {
+                    files.add( f );
+                }
+                else if (f.isDirectory() && !f.isHidden()){
+                    getFilesInDir( f );
+                }
+            }
+        } catch ( Exception e ) {
+            System.out.println( "An error occurred in method 'getFilesInDir'" );
+            e.printStackTrace();
+        }
+    }
 
-        /* 
+    public static ArrayList<File> getFiles() {
+        return files;
+    }
+
+    public static void setFiles(ArrayList<File> files) {
+        GetAllFiles.files = files;
+    }
+
+    public void compileResourcePack(){
         try{
             File thingy = new File( "textures");
             getFilesInDir( thingy );
@@ -50,53 +73,6 @@ public class GetAllFiles {
             }
         } catch (IOException e){
             System.out.println("Messed up in Main");
-        } 
-        
-        */
-    }
-
-    public static void getFilesInDir( File dir ) {
-        //ArrayList< File > fileStorage = new ArrayList< File >();
-        try {
-
-            File here = new File( dir.getAbsolutePath() );
-            File[] contents = here.listFiles();
-
-            for( File f : contents ) {
-                if(f.isFile() && !f.isHidden() && f.getName().indexOf(".mcmeta") == -1) {
-                    files.add( f );
-                }
-                else if (f.isDirectory() && !f.isHidden()){
-                    getFilesInDir( f );
-                }
-                //System.out.println(f.getName());
-            }
-        } catch ( Exception e ) {
-            System.out.println( "An error occurred in method 'getFilesInDir'" );
-            e.printStackTrace();
         }
     }
-
-    public static ArrayList<File> getFiles() {
-        return files;
-    }
-
-    public static void setFiles(ArrayList<File> files) {
-        GetAllFiles.files = files;
-    }
-
-
-    // public static void writeToFile(String content, String fileLocation)
-    // {
-    //        File file = new File(fileLocation);
-    //        FileWriter writer;
-    //        try {
-    //            writer = new FileWriter(file);
-    //            writer.write(content);
-    //            writer.close();
-    //        }
-    //        catch (IOException e) {
-    //            System.out.println("ABCDEFG");
-    //        }
-    // }
 }
