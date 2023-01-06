@@ -14,8 +14,17 @@ public class GetAllFiles {
 
     public static void main( String[] args ) 
     {   
+
+        //new GUI(); 
+
+        // UNCOMMENT THIS ALL OUT WHEN DONE WITH GUI
+
+         
+        
+
+        /* 
         try{
-            File thingy = new File( "/Users/augustusmartinez/Desktop/Scrambler part 14/untitled folder");
+            File thingy = new File( "textures");
             getFilesInDir( thingy );
 
             // for ( int index = 0; index < files.size(); index++ ) {
@@ -41,18 +50,20 @@ public class GetAllFiles {
             }
         } catch (IOException e){
             System.out.println("Messed up in Main");
-        }
+        } 
+        
+        */
     }
 
     public static void getFilesInDir( File dir ) {
         //ArrayList< File > fileStorage = new ArrayList< File >();
         try {
-            
+
             File here = new File( dir.getAbsolutePath() );
             File[] contents = here.listFiles();
 
             for( File f : contents ) {
-                if(f.isFile() && !f.isHidden()) {
+                if(f.isFile() && !f.isHidden() && f.getName().indexOf(".mcmeta") == -1) {
                     files.add( f );
                 }
                 else if (f.isDirectory() && !f.isHidden()){
