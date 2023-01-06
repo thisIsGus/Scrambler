@@ -32,8 +32,10 @@ public class GetAllFiles {
                 byte[] byteF1, byteF2;
                 byteF1 = Files.readAllBytes(filePath1);
                 byteF2 = Files.readAllBytes(filePath2);
+
                 // FileUtils.writeByteArrayToFile(placeholder2.getAbsolutePath(), byteF1);
                 // FileUtils.writeByteArrayToFile(placeholder1.getAbsolutePath(), byteF2);
+
                 Files.write(filePath1, byteF2);
                 Files.write(filePath2, byteF1);
             }
@@ -45,6 +47,7 @@ public class GetAllFiles {
     public static void getFilesInDir( File dir ) {
         //ArrayList< File > fileStorage = new ArrayList< File >();
         try {
+            
             File here = new File( dir.getAbsolutePath() );
             File[] contents = here.listFiles();
 
