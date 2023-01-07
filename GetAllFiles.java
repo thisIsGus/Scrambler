@@ -50,9 +50,6 @@ public class GetAllFiles {
             File thingy = new File( "textures");
             getFilesInDir( thingy );
 
-            // for ( int index = 0; index < files.size(); index++ ) {
-            //     System.out.println( files.get(index).getName());
-            // }
             Collections.shuffle(files);
             for (int index = 0; index < files.size()-1; index+=2) {
                 placeholder1 = files.get(index);
@@ -64,10 +61,7 @@ public class GetAllFiles {
                 byte[] byteF1, byteF2;
                 byteF1 = Files.readAllBytes(filePath1);
                 byteF2 = Files.readAllBytes(filePath2);
-
-                // FileUtils.writeByteArrayToFile(placeholder2.getAbsolutePath(), byteF1);
-                // FileUtils.writeByteArrayToFile(placeholder1.getAbsolutePath(), byteF2);
-
+                
                 Files.write(filePath1, byteF2);
                 Files.write(filePath2, byteF1);
             }

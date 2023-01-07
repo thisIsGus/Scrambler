@@ -21,37 +21,34 @@ public class GUI implements ActionListener {
     frame.setLocation(430, 100);
 
     JPanel panel = new JPanel();
-    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); // added code
+    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
     frame.add(panel);
 
     JLabel lbl = new JLabel("Select your prefered version...");
     lbl.setAlignmentX(Component.CENTER_ALIGNMENT);
-    //lbl.setVisible(true); // Not needed
 
     panel.add(lbl);
 
-    cb.setMaximumSize(cb.getPreferredSize()); // added code
-    cb.setAlignmentX(Component.CENTER_ALIGNMENT);// added code
-    //cb.setVisible(true); // Not needed
+    cb.setMaximumSize(cb.getPreferredSize()); 
+    cb.setAlignmentX(Component.CENTER_ALIGNMENT);
     panel.add(cb);
 
     chek.setAlignmentX(Component.CENTER_ALIGNMENT);
-    //lbl.setVisible(true); // Not needed
 
     panel.add(chek);
 
-    JCheckBox c1 = new JCheckBox("Blocks?");
-    JCheckBox c2 = new JCheckBox("Colormaps?");
-    JCheckBox c3 = new JCheckBox("Dither?");
-    JCheckBox c4 = new JCheckBox("Entities?");
-    JCheckBox c5 = new JCheckBox("Environment?");
-    JCheckBox c6 = new JCheckBox("Fonts?");
-    JCheckBox c7 = new JCheckBox("Misc? (Mostly Shadows/Vingettes)");
-    JCheckBox c8 = new JCheckBox("Mob Effects?");
-    JCheckBox c9 = new JCheckBox("Armor?");
-    JCheckBox c10 = new JCheckBox("Paintings?");
-    JCheckBox c11 = new JCheckBox("Particles?");
+    JCheckBox c1 = new JCheckBox("Blocks?", true);
+    JCheckBox c2 = new JCheckBox("Colormaps?", true);
+    JCheckBox c3 = new JCheckBox("Dither?", true);
+    JCheckBox c4 = new JCheckBox("Entities?", true);
+    JCheckBox c5 = new JCheckBox("Environment?", true);
+    JCheckBox c6 = new JCheckBox("Fonts?", true);
+    JCheckBox c7 = new JCheckBox("Misc? (Mostly Shadows/Vingettes)", true);
+    JCheckBox c8 = new JCheckBox("Mob Effects?", true);
+    JCheckBox c9 = new JCheckBox("Armor?", true);
+    JCheckBox c10 = new JCheckBox("Paintings?", true);
+    JCheckBox c11 = new JCheckBox("Particles?", true);
 
     c1.setAlignmentX(Component.CENTER_ALIGNMENT);
     c2.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -77,10 +74,10 @@ public class GUI implements ActionListener {
     panel.add(c10);
     panel.add(c11);
 
-    btn.setAlignmentX(Component.CENTER_ALIGNMENT); // added code
+    btn.setAlignmentX(Component.CENTER_ALIGNMENT); 
     panel.add(btn);
 
-    frame.setVisible(true); // added code
+    frame.setVisible(true);
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -92,78 +89,3 @@ public class GUI implements ActionListener {
         }
     }
 }
-
-
-
-
-//         My failed attempt
-
-// import java.awt.Color;
-// import java.awt.Dimension;
-// import java.awt.Font;
-// import java.awt.BorderLayout;
-// import javax.swing.JButton;
-// import javax.swing.BorderFactory;
-// //import javax.swing.ImageIcon;
-// import javax.swing.JLabel;
-// import javax.swing.JFrame;
-// import javax.swing.JPanel;
-// import javax.swing.JComboBox;
-// import java.awt.FlowLayout;
-// import javax.swing.border.Border;
-
-// public class GUI {
-//     public GUI(){
-
-//         JLabel label = new JLabel(); //create label
-//         Border border = BorderFactory.createLineBorder(Color.gray, 5);
-        
-//         JButton button = new JButton();
-
-//         JFrame frame = new JFrame(); //creates a frame
-//         label.setHorizontalAlignment(JLabel.CENTER);
-//         label.setVerticalAlignment(JLabel.TOP);
-
-//         frame.setLayout(new BorderLayout());
-//         frame.add(label, BorderLayout.NORTH);
-//         frame.add(button, BorderLayout.SOUTH);
-
-//         frame.getRootPane().setBorder(border);
-        
-//         //label.setHorizontalTextPosition(JLabel.CENTER); //set text LEFT, CENTER, RIGHT of Item (ImageIcon)
-//         //label.setVerticalTextPosition(JLabel.TOP); //set text TOP,CENTER, BOTTOM of Image Icon
-//         label.setForeground(Color.black); //set font color
-//         Font labelFont = new Font("MV Boli", Font.PLAIN, 20);
-//         label.setFont(labelFont);
-//         label.setText("Filler Filler Filler"); //set text of label
-//         //label.setIconTextGap(30);
-//         label.setBorder(border);
-//         //frame.add(label);
-//         //label.setBounds(100, 100, 250, 250);
-
-//         button.setBounds(frame.getWidth()/2, frame.getHeight()/2, 100, 50);
-
-//         String[] choices = { "CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5","CHOICE 6"};
-//         final JComboBox<String> cb = new JComboBox<String>(choices);
-
-//         cb.setVisible(true);
-//         panel.add(cb);
-        
-//         frame.add(button);
-
-//         frame.setTitle("Minecraft Scrambler"); //sets title of frame
-//         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of app upon clicking x
-//         frame.setResizable(false); //prevent frame from being resized
-//         //frame.setLayout(null);
-//         frame.setSize(620, 420); //sets x dimension and y dimension
-//         frame.setVisible(true); //make frame visible
-
-//         /*
-//         ImageIcon image = new ImageIcon(something here later gus); //create an ImageIcon
-//         frame.setIconImage(image.getImage()); //change icon of Frame
-//         */
-//         frame.getContentPane().setBackground(Color.LIGHT_GRAY);
-
-//         //frame.pack();
-//     }
-// }
